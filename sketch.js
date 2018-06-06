@@ -93,10 +93,10 @@ function smallcount(arr) {
 			return((int(arr[0]) && int(arr[2])) || (int(!int(arr[0])) && int(!int(arr[2]))));
 			break;
 			case '$':
-			return( !int(arr[0]) || !int(arr[2]) );
+			return( int(!int(arr[0]) || !int(arr[2])) );
 			break;
 			case '%':
-			return( !(int(arr[0]) || int(arr[2])) );
+			return( int(!(int(arr[0]) || int(arr[2]))) );
 			break;
 		}
 }
