@@ -4,11 +4,13 @@
 	| ===> or
 	> ===> imp
 	= ===> eq
+	$ ===> Sheffer stroke
+	% ===> Logical NOR
 */
 let TextBox, TextBoxAns;
 let Button;
 //let formula = [];
-let symbols = ['&', '|', '!', '>', '=', '(', ')'];
+let symbols = ['&', '|', '!', '>', '=', '(', ')', '$', '%'];
 function setup() {
 	TextBox = createInput("");
 	Button = createButton("Press");
@@ -89,6 +91,12 @@ function smallcount(arr) {
 			break;
 			case '=':
 			return((int(arr[0]) && int(arr[2])) || (int(!int(arr[0])) && int(!int(arr[2]))));
+			break;
+			case '$':
+			return( !int(arr[0]) || !int(arr[2]) );
+			break;
+			case '%':
+			return( !(int(arr[0]) || int(arr[2])) );
 			break;
 		}
 }
