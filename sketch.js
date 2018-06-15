@@ -41,7 +41,7 @@ function myButtonIvent() {
 	}
 	text(answer, 20, 20)
 	console.log(answer);
-	if (ans1 == 0 || ans0 == 0) {
+	if (ans0 == 0) {
   TextBoxAns.elt.value = join(formula, '') + " - tautology";
 } else {
 	TextBoxAns.elt.value = join(formula, '') + " - not tautology";
